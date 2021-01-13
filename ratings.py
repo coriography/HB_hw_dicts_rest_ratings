@@ -14,11 +14,14 @@ def process_scores():
     return scores
 
 
+def print_sorted_scores(scores):
+    """Prints sorted restaurant scores."""
+    # sort dictionary
+    # use .items and unpack to variables
+    for restaurant, score in scores.items():
+        print(f"{restaurant} is rated at {score}")
+    
 
-# # sort dictionary by key
-# dict_ratings = sorted(scores)
-# # loop through keys again to print?
-# for rating in scores:
-#     # print variables in f-string
-#         # output example: Big Bean Shack is rated at 3.
-#     print(f"{rating} is rated at {rating}")
+scores = process_scores()
+
+print_sorted_scores(scores)
