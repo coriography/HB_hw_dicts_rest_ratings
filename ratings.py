@@ -1,16 +1,27 @@
 """Restaurant rating lister."""
 
+scores = {}
+
 def process_scores():
     """Read scores file and return dictionary of {restaurant-name: score}."""
 
     scores_txt = open('scores.txt')
 
-    scores = {}
-
     for line in scores_txt:
         line = line.rstrip()
         restaurant, score = line.split(":")
         scores[restaurant] = int(score)
+    return scores
+
+
+def add_score():
+    """Adds user entry to scores dictionary."""
+    user_restaurant = input("Enter restaurant: ")
+    user_score = input("Enter score: ")
+
+    # add new input to dictionary
+    scores[user_restaurant] = int(user_score)
+    
     return scores
 
 
@@ -20,8 +31,9 @@ def print_sorted_scores(scores):
     # use .items and unpack to variables
     for restaurant, score in scores.items():
         print(f"{restaurant} is rated at {score}")
-    
 
-scores = process_scores()
 
-print_sorted_scores(scores)
+
+# scores = process_scores()
+
+# print_sorted_scores(scores)
