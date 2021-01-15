@@ -20,20 +20,18 @@ def add_score():
     user_score = input("Enter score: ")
 
     # add new input to dictionary
-    scores[user_restaurant] = int(user_score)
-    
-    return scores
+    return scores[user_restaurant] = user_score
 
 
 def print_sorted_scores(scores):
     """Prints sorted restaurant scores."""
     # sort dictionary
     # use .items and unpack to variables
-    for restaurant, score in scores.items():
+    for restaurant, score in sorted(scores.items()):
         print(f"{restaurant} is rated at {score}")
 
 
 
-# scores = process_scores()
+scores = process_scores()
 
-# print_sorted_scores(scores)
+print_sorted_scores(scores)
